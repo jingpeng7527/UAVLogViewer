@@ -1,7 +1,7 @@
 // Worker.js
 // import MavlinkParser from 'mavlinkParser'
 const mavparser = require('./mavlinkParser')
-const DataflashParser = require('./JsDataflashParser/parser').default
+const DataflashParser = require('js-dataflash-parser').default
 const DjiParser = require('./djiParser').default
 
 let parser

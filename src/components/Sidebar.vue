@@ -53,6 +53,11 @@
                           <a class="check-font"> Radio Sticks </a>
                         </label>
                         <label>
+                          <i class="fa fa-comments circle"></i>
+                          <input type="checkbox" v-model="state.showChat">
+                          <a class="check-font"> Chat Assistant </a>
+                        </label>
+                        <label>
                           <i class="fa fa-compass circle"></i>
                           <input type="checkbox" v-model="state.showMagfit">
                           <a class="check-font"> Mag Fit Tool </a>

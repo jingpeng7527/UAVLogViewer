@@ -194,7 +194,7 @@ export default {
                 const layers = this.viewer.scene.imageryLayers
                 const xofs = 0.00001
                 const options = {
-                    url: require('../assets/home2.png').default,
+                    url: require('../assets/home2.png'),
                     tileWidth: 1920,
                     tileHeight: 1080,
                     rectangle: Rectangle.fromDegrees(-48.530077110530044 + xofs, -27.490619277419633,
@@ -263,7 +263,7 @@ export default {
                         shadows: true,
                         // eslint-disable-next-line
                         baseLayer: new ImageryLayer.fromProviderAsync(
-                            IonImageryProvider.fromAssetId(3954)
+                            IonImageryProvider.fromAssetId(2)
                         ),
                         imageryProviderViewModels: imageryProviders,
                         orderIndependentTranslucency: false,
@@ -786,8 +786,8 @@ export default {
             const timespan = getMaxTime(this.points) - this.startTimeMs
             this.state.timeRange = [this.startTimeMs, this.startTimeMs + timespan]
             const viewer = this.viewer
-            this.start = this.getTimeStart()
-            this.stop = JulianDate.addSeconds(this.start, Math.round(timespan / 1000), new JulianDate())
+            this.start = JulianDate.fromDate(new Date())
+            this.stop = JulianDate.addSeconds(this.start, 86400, new JulianDate())
             // Make sure viewer is at the desired time.
             viewer.clock.startTime = this.start.clone()
             this.timelineStart = this.start

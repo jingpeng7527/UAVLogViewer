@@ -59,7 +59,7 @@ def test_chatbot():
 
         try:
             # Send the request
-            response = requests.post(f"{base_url}/api/chat", json=payload)
+            response = requests.post(f"{base_url}/api/chat", json=payload, timeout=60)
             
             if response.status_code == 200:
                 result = response.json()
